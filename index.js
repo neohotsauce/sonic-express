@@ -30,7 +30,7 @@ const getResponseExpress = (app, swaggerOptions, swaggerFilePath) => {
     const { send } = res;
     // eslint-disable-next-line func-names
     res.send = function (responseBody) {
-      const domain = req.baseUrl.split(domainsRegex).slice(2);
+      const domain = (req.baseUrl || req.route?.baseUrl).split(domainsRegex).slice(2);
 
       if (domain.length > 0) {
         const originalRoute = res.req.route
