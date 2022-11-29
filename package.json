@@ -16,7 +16,7 @@
   "author": "Emmanuel Bakare",
   "license": "ISC",
   "dependencies": {
-    "@tiemma/sonic-core": "github:neohotsauce/sonic-core",
+    "@tiemma/sonic-core": "github:neohotsauce/sonic-core#v2.1.0",
     "express": "^4.17.1",
     "swagger-jsdoc": "^5.0.1",
     "swagger-ui-express": "^4.1.4"
@@ -39,10 +39,5 @@
     "ts-node": "^9.0.0",
     "tslib": "^2.0.3",
     "typescript": "^4.0.5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm test"
-    }
   }
 }
