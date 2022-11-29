@@ -45,7 +45,7 @@ const getResponseExpress = (app, swaggerOptions, swaggerFilePath) => {
         ) {
           definitionName = definitionMap[route][method];
         }
-        const { body: requestBody, query: queries } = res.req;
+        const { body: requestBody, query: queries, headers } = res.req;
         const contentType = (res.get('Content-Type') || 'text/html').split(';')[0];
         const { statusCode } = res;
         writeAsSwaggerDocToFile(swaggerSpec,
@@ -58,7 +58,9 @@ const getResponseExpress = (app, swaggerOptions, swaggerFilePath) => {
           statusCode,
           contentType,
           definitionName,
-          swaggerFilePath);
+          swaggerFilePath,
+          headers
+          );
       }
       // eslint-disable-next-line prefer-rest-params
       return send.apply(this, arguments);
